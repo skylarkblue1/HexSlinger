@@ -25,13 +25,16 @@ public class SpellManager : MonoBehaviour
     // Spell Lists
 
     // Attack
-    public string[] atkSpells = new string[] { "Attack", "Hit" };
+    [HideInInspector] // to stop it silently refusing to update the variables and make me look insane again :)
+    public string[] atkSpells = new string[] { "attack", "strong" };
 
     // Defence
-    public string[] defSpells = new string[] { "Shield", "Defend" };
+    [HideInInspector]
+    public string[] defSpells = new string[] { "shield", "defend" };
 
     // Utility
-    public string[] utilSpells = new string[] { "Healing", "Boost" };
+    [HideInInspector]
+    public string[] utilSpells = new string[] { "healing", "atkboost" };
 
     public void Start()
     {
