@@ -2224,6 +2224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 885510685}
   - component: {fileID: 885510684}
+  - component: {fileID: 885510686}
   m_Layer: 0
   m_Name: TypingManager
   m_TagString: Untagged
@@ -2272,6 +2273,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &885510686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885510683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17669d04541d4434daad8a7af56e96f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bAtkOption: {fileID: 1103059235}
+  isAtkTyping: 0
+  bDefOption: {fileID: 956895243}
+  isDefTyping: 0
+  bUtilOption: {fileID: 27798011}
+  isUtilTyping: 0
+  bAtk: {fileID: 490001417}
+  bShield: {fileID: 537216951}
+  bAtkUp: {fileID: 389241023}
+  bHeal: {fileID: 926542264}
+  spellManager: {fileID: 1709916223}
+  placeInString: 0
+  typingChars: 
+  typing: {fileID: 0}
 --- !u!1 &896555065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,15 +3967,24 @@ MonoBehaviour:
   bDefOptionString: 
   bUtilOption: {fileID: 27798011}
   bUtilOptionString: 
-  atkSpells:
-  - attack
-  - strong
-  defSpells:
-  - shield
-  - defend
-  utilSpells:
-  - healing
-  - hpboost
+  rAtkSpells:
+  - adglcd
+  - ejmakc
+  rDefSpells:
+  - lhmkjf
+  - jidbaf
+  rUtilSpells:
+  - fglcbj
+  - hgdcal
+  bAtkSpells:
+  - ypxqur
+  - zntrqv
+  bDefSpells:
+  - orwvux
+  - wqyxts
+  bUtilSpells:
+  - xzotsn
+  - nruyot
 --- !u!1 &1744240422
 GameObject:
   m_ObjectHideFlags: 0

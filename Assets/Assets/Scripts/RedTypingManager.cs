@@ -43,31 +43,28 @@ public class RedTypingManager : MonoBehaviour
     {
         foreach(char c in Input.inputString)
         {
-            Debug.Log("input character: " + c + "  Input string: " + Input.inputString);
-            if (c == spellManager.rAtkOptionString[placeInString])
+            if (c == spellManager.rAtkOptionString[placeInString] && !isDefTyping && !isUtilTyping)
             {
                 placeInString++;
-                Debug.Log("Attack: current input character: " + c);
-                Debug.Log("Attack: current place in string: " + spellManager.rAtkOptionString[placeInString]);
+                Debug.Log("Red Attack: current input character: " + c);
+                Debug.Log("Red Attack: current place in string: " + spellManager.rAtkOptionString[placeInString]);
                 isAtkTyping = true;
 
             } 
-            else if(c == spellManager.rDefOptionString[placeInString])
+            else if(c == spellManager.rDefOptionString[placeInString] && !isAtkTyping && !isUtilTyping)
             {
                 placeInString++;
-                Debug.Log("Defence: current input character: " + c);
-                Debug.Log("Defence: current place in string: " + spellManager.rDefOptionString[placeInString]);
+                Debug.Log("Red Defence: current input character: " + c);
+                Debug.Log("Red Defence: current place in string: " + spellManager.rDefOptionString[placeInString]);
                 isDefTyping = true;
             } 
-            else if(c == spellManager.rUtilOptionString[placeInString])
+            else if(c == spellManager.rUtilOptionString[placeInString] && !isAtkTyping && !isDefTyping)
             {
                 placeInString++;
-                Debug.Log("Utility: current input character: " + c);
-                Debug.Log("Utility: current place in string: " + spellManager.rUtilOptionString[placeInString]);
+                Debug.Log("Red Utility: current input character: " + c);
+                Debug.Log("Red Utility: current place in string: " + spellManager.rUtilOptionString[placeInString]);
                 isUtilTyping = true;
             }
-
-
         }
     }
 }

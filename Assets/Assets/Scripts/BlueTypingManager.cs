@@ -43,31 +43,28 @@ public class BlueTypingManager : MonoBehaviour
     {
         foreach(char c in Input.inputString)
         {
-            Debug.Log("input character: " + c + "  Input string: " + Input.inputString);
-            if (c == spellManager.bAtkOptionString[placeInString])
+            if (c == spellManager.bAtkOptionString[placeInString] && !isDefTyping && !isUtilTyping)
             {
                 placeInString++;
-                Debug.Log("Attack: current input character: " + c);
-                Debug.Log("Attack: current place in string: " + spellManager.bAtkOptionString[placeInString]);
+                Debug.Log("Blue Attack: current input character: " + c);
+                Debug.Log("Blue Attack: current place in string: " + spellManager.bAtkOptionString[placeInString]);
                 isAtkTyping = true;
 
             } 
-            else if(c == spellManager.bDefOptionString[placeInString])
+            else if(c == spellManager.bDefOptionString[placeInString] && !isAtkTyping && !isUtilTyping)
             {
                 placeInString++;
-                Debug.Log("Defence: current input character: " + c);
-                Debug.Log("Defence: current place in string: " + spellManager.bDefOptionString[placeInString]);
+                Debug.Log("Blue Defence: current input character: " + c);
+                Debug.Log("Blue Defence: current place in string: " + spellManager.bDefOptionString[placeInString]);
                 isDefTyping = true;
             } 
-            else if(c == spellManager.bUtilOptionString[placeInString])
+            else if(c == spellManager.bUtilOptionString[placeInString] && !isAtkTyping && !isDefTyping)
             {
                 placeInString++;
-                Debug.Log("Utility: current input character: " + c);
-                Debug.Log("Utility: current place in string: " + spellManager.bUtilOptionString[placeInString]);
+                Debug.Log("Blue Utility: current input character: " + c);
+                Debug.Log("Blue Utility: current place in string: " + spellManager.bUtilOptionString[placeInString]);
                 isUtilTyping = true;
             }
-
-
         }
     }
 }
