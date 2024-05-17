@@ -22,54 +22,92 @@ public class SpellManager : MonoBehaviour
     public string bUtilOptionString;
 
 
-    // Spell Lists
+    // Spell Lists for Red - first half of the alphabet (A, B, C, D, E, F, G, H, I, J, K, L, M)
 
     // Attack
     [HideInInspector] // to stop it silently refusing to update the variables and make me look insane again :)
-    public string[] atkSpells = new string[] { "attack", "strong" };
+    public string[] rAtkSpells = new string[] { "adglcd", "ejmakc" };
 
     // Defence
     [HideInInspector]
-    public string[] defSpells = new string[] { "shield", "defend" };
+    public string[] rDefSpells = new string[] { "lhmkjf", "jidbaf" };
 
     // Utility
     [HideInInspector]
-    public string[] utilSpells = new string[] { "healing", "atkboost" };
+    public string[] rUtilSpells = new string[] { "fglcbj", "hgdcal" };
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // Spell Lists for Blue - second half of the alphabet (N, O, P, Q, R, S, T, U, V, W, X, Y, Z)
+
+    // Attack
+    [HideInInspector]
+    public string[] bAtkSpells = new string[] { "ypxqur", "zntrqv" };
+
+    // Defence
+    [HideInInspector]
+    public string[] bDefSpells = new string[] { "orwvux", "wqyxts" };
+
+    // Utility
+    [HideInInspector]
+    public string[] bUtilSpells = new string[] { "xzotsn", "nruyot" };
 
     public void Start()
     {
-        GenerateSpells();
+        GenerateRedSpells();
+        GenerateBlueSpells();
     }
 
-    public void GenerateSpells()
+    public void GenerateRedSpells()
     {
         // Red Spells
 
         // Red's Attack Spell
-        rAtkOptionString = atkSpells[Random.Range(0, atkSpells.Length)];
+        rAtkOptionString = rAtkSpells[Random.Range(0, rAtkSpells.Length)];
         rAtkOption.text = rAtkOptionString;
 
         // Red's Defence Spell
-        rDefOptionString = defSpells[Random.Range(0, defSpells.Length)];
+        rDefOptionString = rDefSpells[Random.Range(0, rDefSpells.Length)];
         rDefOption.text = rDefOptionString;
 
         // Red's Utility Spell
-        rUtilOptionString = utilSpells[Random.Range(0, utilSpells.Length)];
-        rUtilOption.text = rUtilOptionString;
+        rUtilOptionString = rUtilSpells[Random.Range(0, rUtilSpells.Length)];
+        if (rUtilOptionString == "fglcbj")
+        {
+            string utilText = rUtilOptionString + " (HP)";
+            rUtilOption.text = utilText;
+        }
+        else if (rUtilOptionString == "hgdcal")
+        {
+            string rUAText = rUtilOptionString + " (Atk+)";
+            rUtilOption.text = rUAText;
+        }
+    }
 
-        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public void GenerateBlueSpells()
+    { 
         // Blue Spells
 
         // Blue's Attack Spell
-        bAtkOptionString = atkSpells[Random.Range(0, atkSpells.Length)];
+        bAtkOptionString = bAtkSpells[Random.Range(0, bAtkSpells.Length)];
         bAtkOption.text = bAtkOptionString;
 
         // Blue's Defence Spell
-        bDefOptionString = defSpells[Random.Range(0, defSpells.Length)];
+        bDefOptionString = bDefSpells[Random.Range(0, bDefSpells.Length)];
         bDefOption.text = bDefOptionString;
 
         // Blue's Utility Spell
-        bUtilOptionString = utilSpells[Random.Range(0, utilSpells.Length)];
+        bUtilOptionString = bUtilSpells[Random.Range(0, bUtilSpells.Length)];
         bUtilOption.text = bUtilOptionString;
+        if (bUtilOptionString == "xzotsn")
+        {
+            string utilText = bUtilOptionString + " (HP)";
+            bUtilOption.text = utilText;
+        }
+        else if (bUtilOptionString == "nruyot")
+        {
+            string utilText = bUtilOptionString + " (Atk+)";
+            bUtilOption.text = utilText;
+        }
     }
 }
